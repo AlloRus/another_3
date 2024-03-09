@@ -19,7 +19,7 @@ class UsersResource(Resource):
         return jsonify(
         {
             'users': users.to_dict(only=(
-                'id', 'name', 'hashed_password', 'email', 'created_date'))
+                'id', 'surname', 'name', 'age', 'position', 'speciality', 'address', 'email', 'hashed_password', 'modified_date'))
         }
     )
 
@@ -39,7 +39,7 @@ class UsersListResource(Resource):
         return jsonify(
             {
                 'users':
-                    [item.to_dict(only=('id', 'name', 'hashed_password', 'email', 'created_date')) 
+                    [item.to_dict(only=('id', 'surname', 'name', 'age', 'position', 'speciality', 'address', 'email', 'hashed_password', 'modified_date')) 
                     for item in users]
             }
         )
